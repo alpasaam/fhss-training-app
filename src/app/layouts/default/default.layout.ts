@@ -22,4 +22,3 @@ export class DefaultLayout {
     ],
   };
 }
-ds;
