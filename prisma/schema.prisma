@@ -18,3 +18,19 @@ model JwtBlacklist {
 
   @@index([exp])
 }
+
+model Task {
+  id          String     @id @default(uuid())
+  title       String
+  description String?
+  status      TaskStatus @default(Incomplete)
+  completedAt DateTime?
+  createdAt   DateTime   @default(now())
+  updatedAt   DateTime   @updatedAt
+}
+
+enum TaskStatus {
+  Incomplete
+  InProgress
+  Completed
+}
