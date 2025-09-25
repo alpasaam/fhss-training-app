@@ -6,6 +6,7 @@ import {
   HeaderConfig,
 } from '@fhss-web-team/frontend-utils';
 import { Permission } from '../../../security';
+import { permissionGuard } from '../../utils/permission.guard';
 
 @Component({
   selector: 'app-default-layout',
@@ -18,7 +19,11 @@ export class DefaultLayout {
     title: 'FHSS Starter App',
     menu: [
       { text: 'Home', path: '/' },
-      { text: 'Admin', path: '/admin' },
+      {
+        text: 'Admin',
+        path: '/admin', // Example permission
+        requiredPermissions: ['manage-users-full-access'],
+      },
     ],
   };
 }
