@@ -1,7 +1,8 @@
 import { makeDummy } from '@fhss-web-team/backend-utils';
 import z from 'zod/v4';
-import { Prisma, prisma } from '../../../../prisma/client';
+
 import { faker } from '@faker-js/faker';
+import { prisma, Prisma } from '../../../../../prisma/client';
 
 export const createTasks = makeDummy({
   name: 'Create tasks',
