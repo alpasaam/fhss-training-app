@@ -9,12 +9,18 @@ import { HomePage } from './pages/home/home.page';
 import { DefaultLayout } from './layouts/default/default.layout';
 import { AdminPage } from './pages/admin/admin.page';
 import { permissionGuard } from './utils/permission.guard';
+import { TasksPage } from './pages/tasks/tasks.page';
 
 export const routes: Routes = [
   {
     path: '',
     component: DefaultLayout,
     children: [
+      {
+        path: 'tasks',
+        component: TasksPage,
+        canActivate: [permissionGuard(['manage-tasks'])],
+      },
       {
         path: 'admin',
         component: AdminPage,

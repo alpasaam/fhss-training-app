@@ -24,6 +24,10 @@ export class DefaultLayout {
         path: '/admin', // Example permission
         requiredPermissions: ['manage-users-full-access'],
       },
+      {
+        text: 'Tasks',
+        path: '/tasks',
+      },
     ],
   };
 }
